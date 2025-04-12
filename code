@@ -1,0 +1,27 @@
+from datetime import datetime
+from rich.console import Console
+from rich.text import Text
+
+# Initialize Rich Console
+console = Console()
+
+# Function to display colorful and large time and date
+def display_time_date():
+    current_time = datetime.now()
+
+    # Extracting date and time components
+    date = current_time.strftime("%A, %d %B %Y")
+    time = current_time.strftime("%I:%M:%S %p")
+
+    # Creating colorful text
+    date_text = Text(date, style="bold blue on yellow")
+    time_text = Text(time, style="bold magenta on green")
+
+    # Printing in a large and colorful format
+    console.print("[bold white on dark_blue]--- Current Date and Time ---[/]")
+    console.print(date_text, justify="center")
+    console.print(time_text, justify="center")
+
+# Main Program
+if __name__ == "__main__":
+    display_time_date()
